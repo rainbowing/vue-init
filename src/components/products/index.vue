@@ -13,6 +13,7 @@
 		<br />
 		<div>
 			<button @click="pay">购买</button>
+			<h1>{{$store.getters.totalPrice}}</h1>
 		</div>
 	</div>
 </template>
@@ -50,7 +51,7 @@
 			}
 		},
 		created (){
-			
+		
 		}
 	}
 </script>

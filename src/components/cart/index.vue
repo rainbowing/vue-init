@@ -36,14 +36,9 @@
 				money: state => state.cart.money,
 				goods: state => state.products.goods
 			}),
-			totalPrice (){
-				let totalPrice = 0;
-				let data = this.goods
-				Object.keys(data).forEach((key)=>{
-					totalPrice += data[key].quantity * data[key].price
-				})
-				return totalPrice
-			}
+			...mapGetters([
+				'totalPrice'
+			])
 		},
 		created (){
 			

@@ -22,6 +22,13 @@ export default {
   		}
 	},
 	getters:{		//就是state的计算属性，说白了，可以直接拿state的数据，但是那是原始数据，而通过getters拿的是在原来的基础上，多过滤了一次
-
+		totalPrice (state, getters, rootState){
+			let totalPrice = 0;
+			let data = rootState.products.goods;
+			Object.keys(data).forEach((key)=>{
+				totalPrice += data[key].quantity * data[key].price
+			})
+			return totalPrice
+		}
 	}
 }
